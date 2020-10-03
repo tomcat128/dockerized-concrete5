@@ -2,8 +2,8 @@ FROM php:5.6.38-apache
 
 MAINTAINER Tomasz Fehrenbacher admin@fewobacher.de
 
-ENV C5_VERSION 8.3.1
-ENV C5_URL https://www.concrete5.org/download_file/-/view/99963/8497/
+ENV C5_VERSION 8.3.2
+ENV C5_URL https://www.concrete5.org/download_file/-/view/100595/8497/
 ENV C5_BASEDIR /srv/app/public
 
 RUN mkdir -p "$C5_BASEDIR"
@@ -54,3 +54,6 @@ RUN chown -R www-data:www-data /srv/app
 RUN echo "Europe/Berlin" > /etc/timezone \
     && ln -fs /usr/share/zoneinfo/Europe/Berlin /etc/localtime \
     && dpkg-reconfigure -f noninteractive tzdata
+
+EXPOSE 80
+EXPOSE 443
