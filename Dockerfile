@@ -1,9 +1,9 @@
-FROM php:7.3.10-apache
+FROM php:7.4.10-apache
 
 MAINTAINER Tomasz Fehrenbacher admin@fewobacher.de
 
-ENV C5_VERSION 8.5.2
-ENV C5_URL https://www.concrete5.org/download_file/-/view/111592/8497/
+ENV C5_VERSION 8.5.4
+ENV C5_URL https://www.concrete5.org/download_file/-/view/113632/8497/
 ENV C5_BASEDIR /srv/app/public
 
 RUN mkdir -p "$C5_BASEDIR"
@@ -31,10 +31,8 @@ RUN apt-get update -y \
 
 RUN docker-php-ext-configure \
        gd \
-        --enable-gd-native-ttf \
-        --with-freetype-dir=/usr/include/freetype2 \
-        --with-png-dir=/usr/include \
-        --with-jpeg-dir=/usr/include
+        --with-freetype \
+        --with-jpeg
 
 RUN docker-php-ext-install \
        pdo_mysql \
