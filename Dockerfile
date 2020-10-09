@@ -1,4 +1,4 @@
-FROM php:7.4.10-apache
+FROM php:7.4.11-apache
 
 MAINTAINER Tomasz Fehrenbacher admin@fewobacher.de
 
