@@ -1,9 +1,9 @@
-FROM php:7.4.28-apache
+FROM php:8.1.3-apache
 
 MAINTAINER Tomasz Fehrenbacher admin@fewobacher.de
 
-ENV C5_VERSION 8.5.7
-ENV C5_URL https://www.concretecms.org/download_file/ae9cca19-d76c-458e-a63a-ce9b7b963e1d
+ENV C5_VERSION 9.0.2
+ENV C5_URL https://www.concretecms.org/download_file/3254ddbf-35f0-4c92-8ed1-1fb6b9c0f0d4
 ENV C5_BASEDIR /srv/app/public
 
 RUN mkdir -p "$C5_BASEDIR"
@@ -44,7 +44,7 @@ RUN cd /usr/local/src \
     && wget --no-verbose $C5_URL -O concrete5.zip \
     && unzip -qq concrete5.zip -d concrete5 \
     && rm -rf "$C5_BASEDIR" \
-    && mv "/usr/local/src/concrete5/concrete5-$C5_VERSION" "$C5_BASEDIR" \
+    && mv "/usr/local/src/concrete5/concrete-cms-$C5_VERSION" "$C5_BASEDIR" \
     && rm -rf /usr/local/src/concrete5 /usr/local/src/concrete5.zip
 
 RUN chown -R www-data:www-data /srv/app
