@@ -1,9 +1,9 @@
-FROM php:8.1.11-apache
+FROM php:8.1.20-apache
 
 MAINTAINER Tomasz Fehrenbacher admin@fewobacher.de
 
-ENV C5_VERSION 9.1.2
-ENV C5_URL https://www.concretecms.com/download_file/e005c931-9ee3-4fb7-895f-760bb01f2c4d
+ENV C5_VERSION 9.2.0
+ENV C5_URL https://www.concretecms.com/download_file/277af433-97d4-4817-b48c-a758cd8adf96
 ENV C5_BASEDIR /srv/app/public
 
 RUN mkdir -p "$C5_BASEDIR"
