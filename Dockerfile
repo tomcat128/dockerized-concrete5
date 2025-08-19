@@ -1,6 +1,6 @@
 FROM php:8.3.24-apache
 
-MAINTAINER Tomasz Fehrenbacher admin@fewobacher.de
+LABEL maintainer="Tomasz Fehrenbacher tomasz.fehrenbacher@gmx.de"
 
 ENV C5_VERSION 9.3.9
 ENV C5_URL https://www.concretecms.org/download_file/85033432-5b43-4368-980a-12ddf72c89a0
