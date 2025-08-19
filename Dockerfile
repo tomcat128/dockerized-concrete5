@@ -2,15 +2,15 @@ FROM php:8.3.24-apache
 
 LABEL maintainer="Tomasz Fehrenbacher tomasz.fehrenbacher@gmx.de"
 
-ENV C5_VERSION 9.3.9
-ENV C5_URL https://www.concretecms.org/download_file/85033432-5b43-4368-980a-12ddf72c89a0
-ENV C5_BASEDIR /srv/app/public
+ENV C5_VERSION=9.3.9
+ENV C5_URL=https://www.concretecms.org/download_file/85033432-5b43-4368-980a-12ddf72c89a0
+ENV C5_BASEDIR=/srv/app/public
 
 RUN mkdir -p "$C5_BASEDIR"
 
 WORKDIR /srv/app/
 
-ENV APACHE_DOCUMENT_ROOT "$C5_BASEDIR"
+ENV APACHE_DOCUMENT_ROOT="$C5_BASEDIR"
 
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
 RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
