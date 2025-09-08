@@ -1,9 +1,9 @@
-FROM php:8.4.11-apache
+FROM php:8.4.12-apache
 
 LABEL maintainer="Tomasz Fehrenbacher tomasz.fehrenbacher@gmx.de"
 
-ENV C5_VERSION=9.4.3
-ENV C5_URL=https://www.concretecms.org/download_file/8e11ad24-cc1e-4880-8553-7c18ede22c50
+ENV C5_VERSION=9.4.4
+ENV C5_URL=https://www.concretecms.org/download_file/97928843-11e6-4830-a885-5f3019be8b02
 ENV C5_BASEDIR=/srv/app/public
 
 RUN mkdir -p "$C5_BASEDIR"
